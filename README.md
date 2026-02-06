@@ -40,6 +40,16 @@ VITE_N8N_WEBHOOK_URL=  # Optional: for n8n workflow automation
 
 Get your Supabase credentials from your [Supabase Dashboard](https://app.supabase.com) → Settings → API.
 
+### 2b. Configure Vercel Environment Variables (Deployment)
+
+When deploying to Vercel, add the same variables in the Vercel project settings:
+
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_PUBLISHABLE_KEY`
+- `VITE_N8N_WEBHOOK_URL` (optional)
+
+Vercel builds the app using `npm run build` and serves the `dist/` output. Client-side routing is handled via a rewrite to `index.html` (see `vercel.json`).
+
 ### 3. Set Up Database
 
 Run the database migrations to create the required tables and functions:
